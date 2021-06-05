@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScriptお試し</title>
+<link rel="stylesheet" href="./css.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/styles/mono-blue.min.css">
+</head>
+<body>
+<header>
+<h1>JavaScriptお試し</h1>
+<p>JavaScriptがどういうことができるのかを知るためのページです。</p>
+</header>
+
+<main>
+<h2>はじめに</h2>
+
+<p>次のキーを押すと、<b>開発者ツール</b>が開きます。</p>
+
+<ul>
+<li>Win - <kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></kbd></li>
+<li>Mac - <kbd><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></kbd></li>
+</ul>
+
+<figure>
+<img src="./devtool.png" alt="">
+<figcaption>開発者ツールの表示例</figcaption>
+</figure>
+
+<p>「Console」タブを開くと、JavaScriptコードを入力できるテキストフィールドが表示されます。</p>
+
+<figure>
+<img src="./console.png" alt="">
+<figcaption>開発者ツールの表示例</figcaption>
+</figure>
+
+<div class="box --important">
+<p><strong>非常に重要な警告：</strong>ここに自分が書いたものではないJavaScriptコードを貼り付けないでください。悪意を持ったコードが入力されると、個人情報が流出したり犯罪に巻き込まれる可能性があります。</p>
+</div>
+
+<h2>とりあえず動かしてみよう</h2>
+
+<p>次のJavaScriptコードをコンソールに貼って、<kbd>Enter</kbd>キーを押してみてましょう。</p>
+
+<pre><code class="language-javascript">document.body.addEventListener('click', function () {
+  window.alert('ページがクリックされました。');
+});</code></pre>
+
+<p>うまく動かせたら、画面をクリックするとアラートダイアログがでます。</p>
+
+<p>大丈夫だったらページを更新してください。アラートが出ない、元の状態に戻ります。</p>
+
+<p>リロードするやり方は複数ありますが、次のキーを押すことをおすすめします。</p>
+
+<ul>
+<li>Win - <kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></kbd></li>
+<li>Mac - <kbd><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></kbd></li>
+</ul>
+
+<h2>基本的な文法</h2>
+
+<h3>変数宣言 - 値（データ）に名前をつける</h3>
+
+<pre><code class="language-javascript">let hoge = 'text'; // 文字列</code></pre>
+
+<ul>
+<li><code>let</code> - 変数宣言が始まるよ</li>
+<li><code>hoge</code> - hogeという名前にする</li>
+<li><code>=</code> - hogeという名前をつける値がこの後に書かれます</li>
+<li><code>'text'</code> - 値は文字列の「text」です</li>
+<li><code>;</code> - １つのコードのおしまいです</li>
+</ul>
+
+<p>文字列はシングルクオーテーション（<code>'</code>）か、ダブルクオーテーション（<code>"</code>）か、バッククオーテーション（<code>`</code>）でくくります。</p>
+<p>値には文字列以外にもいろいろあります。</p>
+
+<pre><code class="language-javascript">let piyo = 100;
+
+
+let array = [100, 200, 300];
+
+
+let obj = {
+  name: 'Ecma Kawarabe',
+  age: 168,
+  height: 170,
+};
+
+
+let task1 = function () {
+
+};
+</code></pre>
+
+
+<h3>はじめの一歩はコンソールログ</h3>
+
+<p><code>console.log()</code>は、コンソールに値を出力するための基本のキです。</p>
+
+<p>次のコードを動かしてみましょう。</p>
+
+<pre><code class="language-javascript">console.log(document.title);</code></pre>
+
+<figure>
+<img src="./document.title.png" alt="">
+<figcaption>console.logの実行例</figcaption>
+</figure>
+
+<p>ページのタイトルがコンソールにでたら成功！<code>undefined</code>と表示されるのはいつものことなので、いまは気にしなくて大丈夫です。</p>
+
+<h3>数値 - 四則演算をしたいようなときに使います</h3>
+
+<pre><code class="language-javascript">let hoge = 100;</code></pre>
+
+<ul>
+<li><code>let</code> - 変数宣言が始まるよ</li>
+<li><code>hoge</code> - hogeという名前にする</li>
+<li><code>=</code> - hogeという名前をつける値がこの後に書かれます</li>
+<li><code>100</code> - 値は数値の100です</li>
+<li><code>;</code> - １つのコードのおしまいです</li>
+</ul>
+
+<p>コンソールで計算結果を出力してみましょう。</p>
+
+<pre><code class="language-javascript">let hoge = 100;
+
+console.log(hoge + 200); // > ?</code></pre>
+
+<pre><code class="language-javascript">let hoge = 100;
+
+console.log(hoge - 50); // > ?</code></pre>
+
+<pre><code class="language-javascript">let hoge = 100;
+
+console.log(hoge * 10); // > ?</code></pre>
+
+<pre><code class="language-javascript">let hoge = 100;
+
+console.log(hoge / 2); // > ?</code></pre>
+
+<pre><code class="language-javascript">console.log(6 / 2 * (1 + 2)); // > ?</code></pre>
+
+<p>JavaScriptは小数点が苦手なことは覚えておきましょう。</p>
+
+<pre><code class="language-javascript">let a = 100;
+let b = 100 / 3;
+
+console.log(a); // > 100
+console.log(b); // > ?
+console.log(b * 3); // > ?
+</code></pre>
+
+<pre><code class="language-javascript">console.log(33.3333 + 66.6666); // > ?
+console.log(33.3333333 + 66.6666666); // > ?
+console.log(33.333333333333333 + 66.666666666666666); // > ?
+console.log(33.333333333333331 + 66.666666666666660); // > ?
+</code></pre>
+
+
+<h3>配列 - 連番でたくさんの値を管理する</h3>
+
+<pre><code class="language-javascript">let hoge = [100, 'text', 200];</code></pre>
+
+<ul>
+<li><code>let</code> - 変数宣言が始まるよ</li>
+<li><code>hoge</code> - hogeという名前にする</li>
+<li><code>=</code> - hogeという名前をつける値がこの後に書かれます</li>
+<li><code>[</code> - 配列が始まるよ</li>
+<li><code>100</code> - 数値の100が0番目の値</li>
+<li><code>,</code> - 0番目の値はここで終わり</li>
+<li><code>'text'</code> - 文字列の「text」が1番目の値</li>
+<li><code>,</code> - 1番目の値はここで終わり</li>
+<li><code>200</code> - 数値の200が2番目の値</li>
+<li><code>]</code> - 配列が終わったよ</li>
+<li><code>;</code> - １つのコードのおしまいです</li>
+</ul>
+
+<p>それぞれの値は、ブラケッツ（<code>[]</code>、角括弧）を使ってこんな感じで取得できます。</p>
+
+<pre><code class="language-javascript">let hoge = [100, 'text', 200];
+
+console.log(hoge[0]);
+console.log(hoge[1]);
+console.log(hoge[2]);
+console.log(hoge[3]); // > ?
+</code></pre>
+
+<p>配列の長さは<code>.length</code>で取得できます。</p>
+
+
+<h3>オブジェクト - たくさんの値に名前をつけて管理する</h3>
+
+<pre><code class="language-javascript">let profile = {
+  name: 'Ecma Kawarabe',
+  age: 168,
+  height: 170,
+};
+</code></pre>
+
+<ul>
+<li><code>let</code> - 変数宣言が始まるよ</li>
+<li><code>profile</code> - profileという名前にする</li>
+<li><code>=</code> - profileという名前をつける値がこの後に書かれます</li>
+<li><code>{</code> - オブジェクトが始まるよ</li>
+<li><code>name</code> - nameという名前のデータを保存するよ（プロパティ名）</li>
+<li><code>'Ecma Kawarabe'</code> - 文字列の「Ecma Kawarabe」が値</li>
+<li><code>,</code> - この値はここで終わり</li>
+<li><code>age</code> - ageという名前のデータを保存するよ</li>
+<li><code>168</code> - 数値の168が値</li>
+<li><code>,</code> - この値はここで終わり</li>
+<li><code>height</code> - heightという名前のデータを保存するよ</li>
+<li><code>170</code> - 数値の170が値</li>
+<li><code>,</code> - この値はここで終わり</li>
+<li><code>}</code> - 配列が終わったよ</li>
+<li><code>;</code> - １つのコードのおしまいです</li>
+</ul>
+
+<p>それぞれの値は、ピリオド（<code>.</code>、ドット）を使ってこんな感じで取得できます。</p>
+
+<pre><code class="language-javascript">let profile = {
+  name: 'Ecma Kawarabe',
+  age: 168,
+  height: 170,
+};
+
+console.log(hoge.name);
+console.log(hoge.age);
+console.log(hoge.height);
+</code></pre>
+
+<p>オブジェクトのプロパティ名が、<a href="https://mothereff.in/js-properties">とあるルール</a>だけで構成されてないときはクオートでくくります。</p>
+
+<pre><code class="language-javascript">let obj = {
+  'piyo-ponyo': 100,
+};
+
+console.log(hoge['piyo-ponyo']); // > 100
+</code></pre>
+
+
+<p><code>console.log</code>も、<code>console</code>というオブジェクトの中にある、<code>log</code>というデータをみています。</p>
+
+<p><code>log()</code>のパーレン（<code>()</code>丸括弧）は、関数の呼び出しを意味しています。</p>
+
+<h3>関数 - まとまった処理に名前をつける</h3>
+
+<pre><code class="language-javascript">let task1 = function () {
+  let a = 100;
+  let b = 100;
+
+  console.log(200);
+};
+
+task1();
+</code></pre>
+
+<ul>
+<li><code>let</code> - 変数宣言が始まるよ</li>
+<li><code>task1</code> - task1という名前にする</li>
+<li><code>=</code> - task1という名前をつける値がこの後に書かれます</li>
+<li><code>function () {</code> - 関数が始まるよ</li>
+<li><code>}</code> - 関数が終わったよ</li>
+<li><code>;</code> - １つのコードのおしまいです</li>
+<li><code>task1();</code> - 関数task1を呼び出します</li>
+</ul>
+
+<p>「関数」が入っている変数は、その変数自体が「関数」と呼ばれます。</p>
+
+<p>関数というのは、値に処理が入っている変数のことを指していると思って大丈夫です。</p>
+
+<h4>引数</h4>
+
+<p>関数には「引数」というものを渡せます。</p>
+<p>関数に引き渡すための変数を「引数」と呼びます。</p>
+
+<pre><code class="language-javascript">// 引数名として「arg1」を使います
+let task1 = function (arg1) {
+  let a = 100;
+
+  console.log(a + arg1); // 引数に100を足してコンソールに表示させます
+};
+
+task1(100); // > 200
+</code></pre>
+
+<p><code>return</code>文を使うと、計算結果を呼び出し元に返すことができます。</p>
+
+<pre><code class="language-javascript">// 引数名として「arg1」を使います
+let task1 = function (arg1) {
+  let a = 100;
+
+  return a + arg1;
+};
+
+let result = task1(100);
+
+console.log(result); // > 200
+</code></pre>
+
+<pre><code class="language-javascript">/**
+ * 受け取った値を2倍にして返します
+ * @param {number} arg1 - 倍にする数字。初期値は 100
+ * @returns {number} - 倍にした数字
+ */
+let task1 = function (arg1 = 100) {
+  return 2 * arg1;
+};
+
+console.log(task1()); // > 200
+console.log(task1(200)); // > 400
+console.log(task1(500)); // > 1000
+</code></pre>
+
+<p>もっとシンプルに書けるアロー関数というのもあります👀</p>
+
+<p>このコードは、１つ前のものと同じ意味です。</p>
+
+<pre><code class="language-javascript">/**
+ * 受け取った値を2倍にして返します
+ * @param {number} arg1 - 倍にする数字。初期値は 100
+ * @returns {number} - 倍にした数字
+ */
+let task1 = (arg1 = 100) => 2 * arg1;
+
+console.log(task1()); // > 200
+console.log(task1(200)); // > 400
+console.log(task1(500)); // > 1000
+</code></pre>
+
+
+<h2>DOM操作 - HTMLの要素をJavaScriptで触ります</h2>
+
+<p>HTMLの要素も変数にしまうことができます。</p>
+
+<p><button id="hoge">ターゲットのボタン</button></p>
+
+<pre><code class="language-javascript">let btn = document.querySelector('#hoge'); // idにhogeを持つ要素を拾います
+
+console.log(btn);
+console.log(btn.textContent); // ボタンの中の文字列
+console.log(btn.offsetWidth); // ボタンの横幅
+</code></pre>
+
+<pre><code class="language-javascript">let btn = document.querySelector('#hoge'); // idにhogeを持つ要素を拾います
+
+btn.textContent = 'JavaScriptで文字列を変更した';
+btn.style.width = '300px'; // 横幅を300px に
+</code></pre>
+
+<pre><code class="language-javascript">let btn = document.querySelector('#hoge'); // idにhogeを持つ要素を拾います
+
+btn.addEventListener('click', function () { // クリックされたらアラートダイアログをだしてね
+  alert('クリックされた');
+});
+</code></pre>
+
+<pre><code class="language-javascript">let btn = document.querySelector('#hoge'); // idにhogeを持つ要素を拾います
+
+btn.remove(); // button要素を削除
+</code></pre>
+
+<div id="target" style="margin: 40px 0 0;padding: 10px; border: 1px solid tomato;">ここにさっきのボタンを引っ越しさせてみよう（ボタンがいなくなってたらリロードしよう）</div>
+
+<pre><code class="language-javascript">let btn = document.querySelector('#hoge'); // idにhogeを持つ要素を拾います
+
+console.log(btn); // button要素が取れてることを確認
+
+let target = document.querySelector('#target'); // idにtargetを持つ要素を拾います
+
+console.log(target); // div要素が取れてることを確認
+
+target.textContent = ''; // div要素の中身をからっぽに
+
+target.append(btn); // div要素の中にbutton要素を追加
+</code></pre>
+
+<p>こういうDOM操作はいろんなことができます。詳しく知りたい人は検索してみよう。</p>
+
+<ul>
+<li>要素の隣の要素、親、子など周りを探す（<code>parentElement</code>, <code>nextElementSibling</code>など）</li>
+<li>要素を作成する（<code>createElement</code>など）</li>
+<li>要素を移動する（<code>append</code>、<code>prepend</code>など）</li>
+<li>要素を削除する（<code>remove</code>など）</li>
+<li>要素をコピーする（<code>cloneNode</code>など）</li>
+<li>要素の見た目を操作する（<code>style.XXXX</code>など）</li>
+<li>要素にイベントハンドラ（リスナ）を付与する（<code>addEventListener</code>など。何かが起こったらなにかをしてねというお願い。）</li>
+<li>HTMLを挿入する（<code>insertAdjacentHTML</code>など）</li>
+</ul>
+
+<h2>遊んでみよう</h2>
+
+<div id="playground" style="margin: 40px 0 0;padding: 10px; border: 1px solid tomato;">ここの中に要素を追加したり、文字列を書き換えたり、見た目を変更してみよう〜！</div>
+
+<p><code>id</code>属性値は<code>playground</code>です。</p>
+
+</main>
+
+<footer>
+<p><a href="https://github.com/KawarabeEcma/javascript-get-started">GutHub</a></p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/languages/javascript.min.js"></script>
+<script>
+{
+  const selection = window.getSelection();
+  const onclick = function () {
+    selection.selectAllChildren(this);
+  };
+
+  for (const code of document.querySelectorAll('pre > code')) {
+    code.addEventListener('click', onclick);
+    hljs.highlightElement(code);
+  }
+}
+
+{
+  let key = -1;
+  const onscroll = () => {
+    clearTimeout(key);
+    key = setTimeout(() => {
+      localStorage.setItem('javascript-getting-start', pageYOffset);
+    }, 300);
+  };
+  window.addEventListener('scroll', onscroll);
+  window.addEventListener('load', () => {
+    const top = localStorage.getItem('javascript-getting-start') || 0;
+
+    window.scroll({
+      top,
+    });
+  })
+}
+</script>
+</body>
+</html>
